@@ -18,7 +18,13 @@
     <section class="top-bar-section">
       <ul class="left">
         <li><a href="#">HomeSpot</a></li>
-        <li><a href="#">Link 2</a></li>
+        <% if current_user %>
+          <li><%= link_to "Logout", :logout %></li>
+        <% else %>
+          <li><%= link_to "Register", new_user_path %></li>
+          <li><%= link_to "Login", :login %></li>
+        <% end %>
+
       </ul>
 
       <ul class="right">

@@ -23,6 +23,9 @@ gem 'jbuilder', '1.0.2'
 
 gem 'zurb-foundation', '~> 4.0.0'
 
+gem "sorcery", github: "NoamB/sorcery"
+
+
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end

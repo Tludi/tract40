@@ -1,8 +1,22 @@
 Tract40::Application.routes.draw do
+  resources :sessions
+  resources :users
+
+  get "sessions/new"
+  get "sessions/destroy"
   get "home/index"
+
+  #resources :user
+
+  
+  # get "users"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  
+  get "login"   => "sessions#new",        :as => "login"
+  get "logout"  => "sessions#destroy",    :as => "logout"
+  get "signup"  => "users#new",           :as => "signup"
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'home#index'
